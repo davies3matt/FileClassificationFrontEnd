@@ -1,0 +1,112 @@
+﻿@page
+@model c_sharp_grad_frontend.Pages.TextEditModel
+@{
+
+
+
+
+}
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script src="~/js/sweetalert2.all.min.js"></script>
+<script src="~/js/sweethelper.js"></script>
+<style>
+    h1 {
+        color: dimgray;
+        font-family: 'Raleway',sans-serif;
+        font-size: 62px;
+        font-weight: 800;
+        line-height: 72px;
+        margin: 0 0 24px;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+</style>
+
+
+
+
+<nav class="navbar navbar-dark bg-dark" style="height:100px;">
+    <!-- Navbar content -->
+
+    <form class="form-inline">
+        <button class="btn btn-info" asp-page="/upload">Home</button>
+        <button class="btn btn-info" asp-page="/profile">Profile</button>
+        <button class="btn btn-danger" onclick="alert()">Logout</button>
+    </form>
+</nav>
+<div class="container">
+    <h1>Verify/Edit uploaded data</h1>
+    <form class="container" method="post" enctype="multipart/form-data" asp-controller="FileUpload" asp-action="Index">
+        <div class="container">
+            
+            <table border="1" cellpadding="6">
+
+                @{
+                    <tr>
+                        <td>Name</td>
+                        <td>Surname</td>
+                        <td>CellNumber</td>
+                        <td>Email</td>
+                        <td>IDNumber</td>
+                        <td>Gender</td>
+                        <td>EthnicGroup</td>
+                    </tr>
+
+                    var myList = Model.TextList;
+
+                    for (int i = 0; i < myList.Count; i++)
+                    {
+            <tr>
+                <td>
+                    @Html.TextBox("textFile[" + @i + "].Name",
+                              myList[i].Name)
+                </td>
+                <td>
+                    @Html.TextBox("textFile[" + @i + "].Surname",
+                              myList[i].Surname)
+                </td>
+                <td>
+                    @Html.TextBox("textFile[" + @i + "].CellNumber",
+                              myList[i].CellNumber)
+                </td>
+                <td>
+                    @Html.TextBox("textFile[" + @i + "].Email",
+                              myList[i].Email)
+                </td>
+                <td>
+                    @Html.TextBox("textFile[" + @i + "].IDNumber",
+                              myList[i].IDNumber)
+                </td>
+                <td>
+                    @Html.TextBox("textFile[" + @i + "].Gender",
+                              myList[i].Gender)
+                </td>
+                <td>
+                    @Html.TextBox("textFile[" + @i + "].EthnicGroup",
+                              myList[i].EthnicGroup)
+                </td>
+            </tr>
+                    }
+                }
+            </table>
+        </div>
+
+
+            <input type="submit" value="Submit" class="btn btn-danger" />
+            <a class="btn btn-danger" asp-page="/Upload">Cancel</a>
+    </form>
+</div>
+
+<style>
+    .container {
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        left: 50px
+    }
+</style>

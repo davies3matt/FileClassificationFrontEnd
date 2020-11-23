@@ -1,0 +1,91 @@
+﻿@page
+@model c_sharp_grad_frontend.Pages.DonateModel
+@{
+    ViewData["Title"] = "Upload";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="~/css/main.css" />
+<script src="~/js/sweetalert2.all.min.js"></script>
+<script src="~/js/sweethelper.js"></script>
+
+
+<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+<nav class="navbar navbar-dark bg-dark" style="height:100px;">
+    <!-- Navbar content -->
+
+    <form class="form-inline">
+        <button class="btn btn-info" asp-page="/upload">Home</button>
+        <button class="btn btn-info" asp-page="/profile">Profile</button>
+        <button class="btn btn-danger" onclick="alert()">Logout</button>
+    </form>
+</nav>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        height: 100%;
+        margin: auto;
+    }
+
+    .secondContainer {
+        margin: 1vh 0 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+    }
+
+    .thirdContainer {
+        margin: 1vh 0 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+    }
+
+   h1 { 
+        color: dimgray; 
+        font-family: 'Raleway',sans-serif; 
+        font-size: 62px; 
+        font-weight: 800; 
+        line-height: 72px; 
+        margin: 0 0 24px; 
+        text-align: center; 
+        text-transform: uppercase; 
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+
+    .containerTwo {
+        border: 2px solid gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+        margin: auto;
+    }
+
+</style>
+
+<div class="container">
+    <h1>Upload a file to start classification</h1>
+    <div class="containerTwo">
+        <form method="post" enctype="multipart/form-data" asp-controller="FileUpload" asp-action="Index">
+            <br /><br />
+            <input type="file" id="avatar" name="avatar" onchange="readURL(this)" />
+            <br /><br>
+            <input type="submit" value="Upload File" class="btn btn-danger" />
+            <br /><br />
+        </form>
+        <br /><br />
+    </div>
+</div>

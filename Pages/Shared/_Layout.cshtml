@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - c_sharp_grad_frontend</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="~/css/navbar.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+    <header>
+    </header>
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+    <div style="relative">
+        <footer class="site-footer">
+            <div style="display: flex; flex-wrap: wrap;">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">
+                        Matthew Davies &dagger; 2020 |
+                        <a>24929239</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="github" target="_blank" href="https://github.com/davies3matt/File-Classification"><i class="fa fa-github"></i></a></li>
+                        <li><a class="twitter" target="_blank" href="https://twitter.com/bhaz26609816"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="youtube" target="_blank" href="https://www.youtube.com/channel/UC5uwwIP1u6ZQfMD1A8VeWdg?view_as=subscriber"><i class="fa fa-youtube"></i></a></li>
+                        <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/matthew-davies-a930a8153/"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
